@@ -191,7 +191,7 @@ const PROJECTS = [
     results: ["연구 제안 단계 — 5가지 아키텍처 확장을 수식 수준까지 설계"],
     period: "2024.10 – 2024.12",
     diagrams: [{ src: "assets/diagrams/c03-estmoe-arch.svg", cap: "제안 아키텍처" }],
-    pdf: null, // 파일 수령 후 복원: { label: "논문 PDF", file: "assets/pdf/est-moe.pdf" }
+    pdf: { label: "논문 PDF", file: "assets/pdf/est-moe.pdf" },
     privateNote: null,
   },
 
@@ -220,8 +220,8 @@ const PROJECTS = [
     ],
     period: "2024.08 – 2024.12",
     diagrams: [{ src: "assets/diagrams/c05-gendergap-pipeline.svg", cap: "분석 파이프라인" }],
-    pdf: null, // 파일 수령 후 복원: { label: "보고서 PDF", file: "assets/pdf/gender-gap.pdf" }
-    privateNote: "보고서는 스폰서 공개 조건 확인 후 게시",
+    pdf: { label: "보고서 PDF", file: "assets/pdf/gender-gap.pdf" },
+    privateNote: null,
   },
 
   /* ── 8. 의회 이념 예측 ────────────────────────────────── */
@@ -249,7 +249,7 @@ const PROJECTS = [
     ],
     period: null,
     diagrams: [],
-    pdf: null, // 파일 수령 후 복원: { label: "논문 PDF", file: "assets/pdf/ideology.pdf" }
+    pdf: { label: "논문 PDF", file: "assets/pdf/ideology.pdf" },
     privateNote: null,
   },
 
@@ -403,8 +403,8 @@ const PROJECTS = [
     ],
     period: null,
     diagrams: [{ src: "assets/diagrams/c12-model-comparison.svg", cap: "모델 비교 — 과적합 역전" }],
-    pdf: null, // 파일 수령 후 복원: { label: "보고서 PDF", file: "assets/pdf/covid-ohio.pdf" }
-    privateNote: "보고서 PDF는 공동저자 동의 확인 후 공개",
+    pdf: { label: "보고서 PDF", file: "assets/pdf/covid-ohio.pdf" },
+    privateNote: null,
   },
 
   /* ── 14. GitHub 네트워크 분석 ─────────────────────────── */
@@ -432,8 +432,8 @@ const PROJECTS = [
     ],
     period: null,
     diagrams: [{ src: "assets/diagrams/c13-three-stage.svg", cap: "3단계 방법론 비교" }],
-    pdf: null, // 파일 수령 후 복원: { label: "보고서 PDF", file: "assets/pdf/github-network.pdf" }
-    privateNote: "보고서 PDF는 공동저자 동의 확인 후 공개",
+    pdf: { label: "보고서 PDF", file: "assets/pdf/github-network.pdf" },
+    privateNote: null,
   },
 
   /* ── 15. DUOGREEN RPA ─────────────────────────────────── */

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1404 236" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="4단 이벤트 기반 인텔리전스 파이프라인">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">4단 이벤트 기반 인텔리전스 파이프라인</text>
+<path d="M198,89.0 L262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 L498,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,89.0 L734,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M906,89.0 L970,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M1142,89.0 L1206,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M584.0,118 L584.0,152" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)" stroke-dasharray="5 4"/>
+<path d="M820.0,152 L820.0,118" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)" stroke-dasharray="5 4"/>
+<rect x="26" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="112.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">리포트 이메일</text>
+<text x="112.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">24시간 불규칙 수신</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">① 수집 (RPA)</text>
+<text x="348.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">15단계 라우팅 · 폴백 다운로드</text>
+<rect x="498" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">② 요약·적재</text>
+<text x="584.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">OCR → GPT → Excel 8섹션</text>
+<rect x="734" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="820.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">③ 주간 웹앱</text>
+<text x="820.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">6모델 병렬 + LLM Judge</text>
+<rect x="970" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="1056.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">④ 배포·보관</text>
+<text x="1056.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">뉴스레터 · PDF 아카이빙</text>
+<rect x="1206" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="1292.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">C-Level 구독</text>
+<text x="1292.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">주간 브리핑 운영 중</text>
+<rect x="498" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#F0B35C" stroke-width="1.8"/>
+<text x="584.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#FFD9A0">이중 예외 알림</text>
+<text x="584.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">AI 거부 · 시스템 오류</text>
+<rect x="734" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="820.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">블라인드 평가</text>
+<text x="820.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">A~F 라벨 · Judge 폴백</text>
+</svg>

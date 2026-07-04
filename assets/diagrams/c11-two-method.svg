@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 236" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="직접 분류 vs FP-Growth 증강">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">직접 분류 VS FP-GROWTH 증강</text>
+<path d="M198,89.0 L262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M198,89.0 C230.0,89.0 230.0,181.0 262,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 L498,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,181.0 L498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,181.0 L734,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="26" y="60" width="172" height="58" rx="6" fill="#151D2E" stroke="#F0B35C" stroke-width="1.4"/>
+<line x1="26" y1="70" x2="198" y2="70" stroke="#F0B35C" stroke-width="1" opacity="0.55"/>
+<text x="112.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">SAMHSA MHCLD</text>
+<text x="112.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">650만 건 · 13개 플래그</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="77.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">Method 1</text>
+<text x="348.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">직접 분류</text>
+<text x="348.0" y="109.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">5개 분류기 · k-fold CV</text>
+<rect x="498" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#F0B35C" stroke-width="1.8"/>
+<text x="584.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#FFD9A0">정확도 함정</text>
+<text x="584.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">98% 정확도 · F1 0.02</text>
+<rect x="262" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="169.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">Method 2</text>
+<text x="348.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">FP-Growth 마이닝</text>
+<text x="348.0" y="201.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">lift&gt;1 규칙 프루닝</text>
+<rect x="498" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">피처 재정의</text>
+<text x="584.0" y="193.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">+ 언더샘플링</text>
+<rect x="734" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="820.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">F1 0.69–0.87</text>
+<text x="820.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">13개 플래그 전반</text>
+</svg>

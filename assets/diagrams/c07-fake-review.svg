@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 328" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="가짜 리뷰 탐지 — 3중 규칙">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">가짜 리뷰 탐지 — 3중 규칙</text>
+<path d="M198,181.0 C230.0,181.0 230.0,89.0 262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M198,181.0 L262,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M198,181.0 C230.0,181.0 230.0,273.0 262,273.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 C466.0,89.0 466.0,181.0 498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,181.0 L498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,273.0 C466.0,273.0 466.0,181.0 498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,181.0 L734,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="26" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="112.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">리뷰 데이터</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">단시간</text>
+<text x="348.0" y="101.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">대량 작성</text>
+<rect x="262" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">동일 IP 지역</text>
+<rect x="262" y="244" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="269.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">TF-IDF 유사도</text>
+<text x="348.0" y="285.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">중복·상투 문구</text>
+<rect x="498" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">규칙 스코어 결합</text>
+<rect x="734" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="820.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">의심 리뷰 플래깅</text>
+</svg>

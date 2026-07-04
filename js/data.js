@@ -1,0 +1,470 @@
+/* ============================================================
+   포트폴리오 프로젝트 데이터 — 단일 소스
+   · 배열 순서 = 화면 표시 순서 (자유롭게 재배열 가능)
+   · pdf: { label, file } — assets/pdf/ 에 파일을 넣으면 버튼 활성화
+   · period: null 이면 기간 미표시
+   ============================================================ */
+const PROFILE = {
+  name: "남승현",
+  nameEn: "Seunghyun Nam",
+  heroTag: "Gen AI · Data Scientist",
+  tagline: "RPA 자동화에서 Graph RAG까지 — 자동화와 데이터 사이언스를 잇는 Gen AI · Data Scientist",
+  about: "사내 최초로 RPA를 도입해 전사로 확장하며 자동화 대상 업무의 처리 비용을 30% 절감했고, 그 과정에서 자동화가 만드는 효율과 임팩트에 매료됐습니다. 이후 데이터 사이언스로 영역을 넓혀 데이터에서 인사이트를 끌어내는 예측·분석 모델을 구축했고(예: 주가 예측 정확도 14.2% 개선), 현재는 삼일PwC에서 LLM 기반 AI Agent와 Graph RAG 시스템을 설계·개발하고 있습니다. 반복 업무를 자동화하고, 데이터로 의사결정의 근거를 만들며, AI로 실제 임팩트를 내는 것 — 이 셋을 하나로 잇는 것이 제가 일하는 방식입니다.",
+  location: "서울, 대한민국",
+  email: "shknam3262@gmail.com",
+  github: "https://github.com/SHKNam",
+  linkedin: "https://www.linkedin.com/in/seunghyun-nam-a89987205/",
+  resume: null,                      // 이력서 PDF — 파일 수령 후 "assets/pdf/resume.pdf" 로 복원
+  photo: "assets/profile.jpg",       // 프로필 사진 — 파일 추가 필요 (없으면 자동 숨김)
+  journey: [
+    { label: "RPA 자동화", sub: "전사 도입 · 비용 30% 절감" },
+    { label: "Data Science", sub: "예측·분석 모델링 (MS, Univ. of Rochester)" },
+    { label: "Gen AI", sub: "AI Agent · Graph RAG (삼일PwC)" },
+  ],
+};
+
+const PROJECTS = [
+
+  /* ── 1. 지정학 인텔리전스 자동화 ───────────────────────── */
+  {
+    id: "geo-intel",
+    tags: ["AI Engineering", "RPA·자동화"],
+    catLabel: "AI Eng · RPA — 실무",
+    title: "지정학 리포트 End-to-End 인텔리전스 자동화",
+    subtitle: "24시간 불규칙 수신부터 멀티모델 AI 주간 브리핑까지 (글로벌 컨설팅펌)",
+    oneLiner: "시간을 가리지 않고 도착하는 글로벌 지정학 리포트의 수집·분류·요약·DB 기입·주간 보고서 작성 — 전부 수작업이던 프로세스를 RPA(수집·배포) × 생성형 AI(요약·평가)를 결합한 4단 이벤트 기반 파이프라인으로 완전 무인화, 현재 사내 운영 중.",
+    problem: "리포트 PDF가 새벽·낮·밤 구분 없이 불규칙하게 이메일 수신 — 담당자가 상시 메일을 확인해 다운로드, 유형별 폴더 정리, Excel 기입, 주간 요약 구조 설계·작성까지 전 과정을 수작업으로 수행(상당한 상시 소요시간 발생). 사람의 근무시간과 무관하게 도착 즉시 처리되는 이벤트 기반 자동화가 필요했음.",
+    roleIntro: "4단 전체 단독 설계·개발",
+    role: [
+      "① 수집(RPA): 이메일 수신 트리거로 도착 즉시 반응 → 제목+발신자 15단계 라우팅으로 유형별 자동 분류 → HTTP 리다이렉트 2차 폴백 다운로드 → 이중 저장 (Power Automate — 새벽 수신도 무인 처리)",
+      "② 요약·적재: 저장소 1분 간격 감지 → Document Intelligence OCR → GPT 요약(환각 방지 프롬프트: 원문 외 금지·수치 변환 금지) → 8개 섹션 Excel 자동 분류·날짜 정렬 → AI 거부응답/시스템 오류 이중 예외 알림 (Azure Logic Apps)",
+      "③ 주간 요약 웹앱: 수기로 짜던 주간 보고서 구조를 자동화 — 3사(OpenAI·Google·Anthropic) 6개 모델 병렬 요약(A~F 블라인드 라벨) → LLM Judge 최선 선별(실패 시 자동 폴백) → 하이브리드 OCR(텍스트 추출 + Vision 폴백) → SSE 스트리밍 · PostgreSQL · 프롬프트 DB 관리 → LLM 기반 보고서→Outlook 호환 HTML 이메일 자동 변환 (Next.js 16 · TypeScript)",
+      "③-산출물 설계: TOP ISSUE → 한국 산업별 임팩트 테이블 → 실행 체크리스트 → 지역별 브리프의 고정 정보 구조 · 원문 PDF 링크 병기로 전 주장 추적 가능 · 핵심 인용 원문+번역 병기 · 원문의 확률 전망을 수치 왜곡 없이 보존 · AI 활용 고지 포함",
+      "④ 배포·보관(RPA): HTTP API형 플로우 — 원문 링크 동적 조립 HTML 뉴스레터 발송 + M365 네이티브 HTML→PDF 아카이빙",
+    ],
+    stack: ["Power Automate", "Azure Logic Apps", "Azure Document Intelligence", "Azure OpenAI (GPT)", "OpenAI GPT ×2", "Google Gemini ×2", "Anthropic Claude ×2 (Judge: Claude)", "Next.js 16", "TypeScript", "PostgreSQL (Neon)", "SSE", "Office Scripts", "SharePoint REST"],
+    results: [
+      "상시 모니터링·수기 정리·Excel 기입·주간 보고서 작성의 전 과정 무인화 — 수신 시각과 무관하게 도착 즉시 자동 처리",
+      "사내 배포·현재 운영 중, C-Level 임원들이 직접 구독 요청해 주간 브리핑으로 사용",
+      "글로벌 리포트를 한국 비즈니스 임팩트 관점으로 재구조화한 HTML 브리핑 제품 설계",
+      "블라인드 멀티모델 평가로 보고서 품질 자동 선별 체계 구축",
+    ],
+    period: null,
+    diagrams: [
+      { src: "assets/diagrams/c14-four-stage.svg", cap: "4단 이벤트 기반 파이프라인" },
+      { src: "assets/diagrams/c14-briefing-mockup.svg", cap: "주간 브리핑 정보 구조 (더미 콘텐츠)" },
+    ],
+    pdf: null,
+    privateNote: "회사 자산으로 코드·플로우 비공개",
+  },
+
+  /* ── 2. GraphRAG 해커톤 ────────────────────────────────── */
+  {
+    id: "graphrag-hackathon",
+    tags: ["AI Engineering"],
+    catLabel: "AI Eng — 사내 해커톤 (약 1주)",
+    title: "Graph RAG × 멀티 에이전트 기반 감사업무 Executive Dashboard",
+    subtitle: null,
+    oneLiner: "감사법인 운영 데이터를 Knowledge Graph로 구축하고, Graph RAG 챗봇과 도메인 전문가 페르소나 AI들의 토론으로 해결책·보고서를 자동 생성해 Teams/메일까지 전달하는 대시보드.",
+    problem: "예산·리스크·인력·재무 데이터가 시스템별로 분산돼 경영진이 통합 현황을 보려면 수작업 취합이 필요했음.",
+    roleIntro: "백엔드 전체 + 초기 프론트 코어 단독 개발 (팀원: 후반 프론트 디자인·기능 고도화)",
+    role: [
+      "Neo4j Knowledge Graph 설계·구축 (프로젝트·인력·고객·재무·조직)",
+      "Graph RAG 파이프라인 + AI 챗봇 (자연어 질의 → 그래프 조회 → GPT 인사이트)",
+      "멀티 에이전트 페르소나 토론: 도메인 전문가 페르소나 AI들이 질의를 두고 토론 → 해결책 도출 → 보고서 자동 작성",
+      "Power Automate HTTP 연동: 챗봇 답변·페르소나 보고서를 Teams/메일로 자동 발송 (인사이트 생성→전달 엔드투엔드)",
+      "Flask REST API 6종 (예산/프로젝트/리스크/인력/재무/그래프)",
+      "프론트 코어: Vue 3 + D3.js Force Simulation 그래프 시각화",
+    ],
+    stack: ["Python Flask", "Neo4j", "OpenAI GPT", "Vue 3", "Vite", "Tailwind", "D3.js", "Power Automate"],
+    results: [
+      "해커톤 결과물의 설계·기술이 인정받아 실무 프로젝트 2건(사내 메모 AI, 감사 온톨로지 구축)에 투입되는 기반이 됨",
+      "약 1주 내 그래프 DB 설계부터 프론트까지 풀스택 단독 구축",
+    ],
+    period: null,
+    diagrams: [{ src: "assets/diagrams/c02-graphrag-arch.svg", cap: "시스템 아키텍처" }],
+    pdf: null,
+    privateNote: "저장소 비공개 (실데이터·내부 프로세스 포함) — 아키텍처 다이어그램으로 전시",
+  },
+
+  /* ── 3. memo-ai ────────────────────────────────────────── */
+  {
+    id: "memo-ai",
+    tags: ["AI Engineering"],
+    catLabel: "AI Eng · Full-stack — 실무",
+    title: "AI 지식관리 노트 앱 — 문서 수집부터 3D 지식 그래프까지",
+    subtitle: "글로벌 컨설팅펌 사내 프로젝트",
+    oneLiner: "Obsidian(그래프)·Notion(블록 에디터)·Clova Note(AI 정리)의 강점을 결합한 PKM 노트 앱 — GraphRAG 해커톤의 실무화 프로젝트로, Outbox 패턴 폴리글랏 아키텍처와 Docling + 선택적 VLM 하이브리드 파이프라인을 설계 주도·전영역 개발, 사내 dogfood 실운영 (1,378 메모 · 4,395 엣지 검증).",
+    problem: "흩어진 문서(PDF·Office·이미지)를 노트로 수집·정리·연결하는 전 과정이 수동 — AI 변환 품질과 LLM 비용을 동시에 통제하는 파이프라인 + 정형/그래프 이중 저장소 동기화 필요.",
+    roleIntro: "설계 주도 + 전영역 개발 · 팀 협업",
+    role: [
+      "분산 데이터 아키텍처: MSSQL(본문) ↔ FalkorDB(그래프) Outbox 패턴 비동기 동기화 + reconciliation(count 대조·멱등 재적재)으로 drift 방어",
+      "문서→Markdown AI 파이프라인: Docling(TableFormer+EasyOCR) 1차 → 누락 청크만 선택적 GPT-4o Vision 2차 · 임계치 트리거 + PDF당 hard cap + 사용자별 비용 DB 추적(비용-품질 트레이드오프 설계) · 전 페이지 asyncio 병렬",
+      "3D 지식 그래프: degree percentile tier 분류(hub~minor) → 커스텀 d3-force 3-Shell 동심구 레이아웃 · BFS 분리 컴포넌트 융합 · GPU 메모리 누수 방지",
+      "AI 메모 정리: 정보 손실 차단 룰 4종(위키링크·표·체크박스 원형 보존) + 원본 vs AI 2-pane diff 선택 적용",
+      "운영 안정성: 멀티테넌시 user_id 격리(ADR) · rate limiting · LLM 비용 가드레일 — 실운영 트러블슈팅 6건(데이터 휘발·VLM 페이지 손실·중복 결제 등)을 팀과 함께 근본 원인까지 추적·해결·문서화",
+      "개발 프로세스: PRD·ADR(append-only)·트러블슈팅 로그 기반 단계적(Phase) 개발 리드",
+    ],
+    stack: ["Python", "FastAPI", "React", "Vite", "BlockNote", "Three.js (react-force-graph-3d)", "MSSQL", "FalkorDB", "Docling", "EasyOCR", "GPT-4o Vision", "d3-force", "Docker Compose", "nginx"],
+    results: [
+      "사내 dogfood 실운영 — 1,378 메모 · 4,395 엣지 그래프 검증",
+      "LLM 비용 가드레일(hard cap + 사용량 추적)로 무통제 과금 차단",
+      "해커톤 프로토타입을 운영 제품으로 실무화한 엔드투엔드 실행",
+    ],
+    period: null,
+    diagrams: [{ src: "assets/diagrams/c15-memoai-arch.svg", cap: "Outbox 동기화 + 하이브리드 변환 아키텍처" }],
+    pdf: null,
+    privateNote: "회사 자산으로 코드 비공개",
+  },
+
+  /* ── 4. DART AX Insights ───────────────────────────────── */
+  {
+    id: "dart-ax",
+    tags: ["AI Engineering"],
+    catLabel: "AI Eng — 실무",
+    title: "DART 공시 기반 기업 분석·AX 기회 도출 웹앱",
+    subtitle: "AI 코딩 에이전트로 6시간 내 풀스택 구축",
+    oneLiner: "회사명만 입력하면 전자공시(DART)에서 사업보고서·재무를 자동 수집해 비교 분석·AI 인사이트·Q&A를 실시간 스트리밍하는 풀스택 웹앱.",
+    problem: "컨설턴트의 기업 분석·영업기회 도출은 공시 원문 수작업 검토 의존 — 다회사 비교·인사이트 정리에 큰 시간 소요.",
+    roleIntro: null,
+    role: [
+      "AI 개발 워크플로우 설계 (핵심): AI 코딩 에이전트를 지휘해 6시간 미만에 풀스택 구축. RAG 도입→기능 과다 판단→롤백, 인메모리→SQLite 이관 등 아키텍처 의사결정 직접 수행, 전 과정을 재현 가능한 프롬프트 세트로 정제·문서화",
+      "백엔드: FastAPI · DART Open API 4종 연동 · 사업보고서 본문 섹션 자동 분리(정규식+fallback) · SSE 스트리밍 · SQLite 영속 캐시(24h TTL, API 호출 한도 대응)",
+      "프론트: React 18+TS · 4탭(비교 매트릭스·회사 상세·AX 리포트·Q&A) · 실시간 마크다운 스트리밍 · 인용 chip→원문 모달 · 추천 질문 프리페치",
+      "LLM 엔지니어링: 8섹션 통합 리포트 프롬프트 설계 · 용도별 토큰 정책 · 후속질문 자동 생성 · XSS 방어",
+    ],
+    stack: ["FastAPI", "httpx", "SQLite", "SSE", "React 18", "TypeScript", "Vite", "Tailwind", "Recharts", "react-query", "GPT-4o", "Claude Code (AI 페어 프로그래밍)"],
+    results: [
+      "임원 주관 사내 AX 교육의 시연 자료로 채택",
+      "통상 수 주 규모의 풀스택 앱을 6시간 미만에 구축",
+    ],
+    period: null,
+    diagrams: [{ src: "assets/diagrams/c04-dart-mockup.svg", cap: "화면 구성 목업 (브랜딩 미사용)" }],
+    pdf: null,
+    privateNote: "코드 비공개 (사내 LLM·영업 전략 포함)",
+  },
+
+  /* ── 5. CookLens ──────────────────────────────────────── */
+  {
+    id: "cooklens",
+    tags: ["AI Engineering"],
+    catLabel: "AI Eng — 개인",
+    title: "CookLens — 재료 사진 인식 기반 AI 레시피 추천·생성 앱",
+    subtitle: null,
+    oneLiner: "재료 사진을 멀티모달 비전 모델로 인식하고, DB 검색 → 결과 없으면 GPT가 레시피를 생성해 DB에 축적하는 self-expanding 하이브리드 레시피 어시스턴트 (Streamlit 풀스택 단독 개발).",
+    problem: "\u201c지금 있는 재료로 뭘 만들지\u201d는 검색만으로 해결이 어렵고, 비전 모델의 재료 오인식은 추천 품질을 직접 훼손.",
+    roleIntro: null,
+    role: [
+      "비전 모델 선정·교체: YOLO로 초기 구현 → 재료 인식 성능 한계 확인 → Gemma 멀티모달 비전 모델로 전환해 인식 품질 개선 (객체 탐지 → VLM 접근 전환의 의사결정 직접 수행)",
+      "Human-in-the-loop 보정 UX: 인식 재료를 multiselect로 확인·제거 + 수동 추가 — 모델 한계를 UX 설계로 방어",
+      "하이브리드 추천 로직: 재료 기반 DB 검색(TheMealDB 초기 구축) → 미발견 시 GPT 레시피 생성 → 사용자 저장 시 DB 축적(is_user_created 플래깅) — 쓸수록 커지는 레시피 저장소",
+      "탐색 UX: 카테고리·국가 필터 + 정렬 + 상세 뷰(YouTube 연동)",
+      "기획: 손그림 와이어프레임 3장으로 화면 흐름 선행 설계",
+    ],
+    stack: ["Python", "Streamlit", "Gemma (Vision)", "OpenAI GPT", "TheMealDB API", "SQLite", "PIL"],
+    results: [
+      "사진 인식 → 사용자 보정 → 검색/생성 → DB 축적의 엔드투엔드 파이프라인 단독 구축",
+      "비전 모델 교체로 재료 인식 품질 개선",
+    ],
+    period: null,
+    diagrams: [{ src: "assets/diagrams/c08-cooklens-pipeline.svg", cap: "하이브리드 파이프라인" }],
+    pdf: null,
+    privateNote: "코드 비공개",
+  },
+
+  /* ── 6. EST-MoE ───────────────────────────────────────── */
+  {
+    id: "est-moe",
+    tags: ["DS·ML"],
+    catLabel: "DS·ML Research — Univ. of Rochester 대학원",
+    title: "EST-MoE — 외부 이벤트 감응형 시계열 예측 아키텍처 제안",
+    subtitle: null,
+    oneLiner: "Time-MoE의 한계(외부 이벤트 무시)를 식별하고, 컨텍스트 게이팅과 감도 학습 손실을 수식 수준까지 설계한 연구 제안.",
+    problem: "기존 시계열 모델은 과거 패턴에만 의존해 경제 충격·재난 등 외부 이벤트가 지배하는 변동성 국면에서 예측력 급락.",
+    roleIntro: null,
+    role: [
+      "5가지 확장 설계: Contextual Encoding / Contextual Gating / Multi-Resolution Forecasting / Dynamic Routing / Contextual Sensitivity Loss",
+      "실험 설계: M4·FRED·World Bank·EM-DAT 데이터, Time-MoE/ARIMA/LSTM 베이스라인, HPC+A100 계획",
+      "후속 탐구: 희소 Top-K 게이팅·부하 분산·분산 훈련 심화 분석 지속",
+    ],
+    stack: ["시계열 예측", "Mixture-of-Experts", "연구 제안 (구현·검증은 향후 과제)"],
+    results: ["연구 제안 단계 — 5가지 아키텍처 확장을 수식 수준까지 설계"],
+    period: "2024.10 – 2024.12",
+    diagrams: [{ src: "assets/diagrams/c03-estmoe-arch.svg", cap: "제안 아키텍처" }],
+    pdf: null, // 파일 수령 후 복원: { label: "논문 PDF", file: "assets/pdf/est-moe.pdf" }
+    privateNote: null,
+  },
+
+  /* ── 7. Gender Gap × Child Labor ──────────────────────── */
+  {
+    id: "gender-gap",
+    tags: ["DS·ML"],
+    catLabel: "DS·ML — Univ. of Rochester 대학원 캡스톤 (스폰서: MacroXStudio)",
+    title: "글로벌 성 격차(GGI)·아동노동 예측 모델링",
+    subtitle: null,
+    oneLiner: "Facebook API 데이터를 연간 거시지표의 고빈도 프록시로 활용해 Elastic Net 정규화 회귀 기반 GGI 예측 모델을 설계하고, 정규화로 다중공선성·과적합을 통제, 인터랙티브 정책 대시보드까지 구축.",
+    problem: "WEF의 GGI는 연 1회 발표라 사회경제적 충격의 실시간 포착이 불가. 성 불평등–아동노동 간 관계는 기존 연구 미탐구 영역.",
+    roleIntro: "팀 리드 · 개발 + Data Validation",
+    role: [
+      "4개 기관(World Bank·ILO·UNICEF·Facebook API) 데이터 통합",
+      "전처리: 국가명 표준화 · KNN/선형회귀 imputation · Yeo-Johnson 변환 · 상관 기반 피처 선택 (39 features)",
+      "모델링: Lasso/Ridge/ElasticNet/RF/H2O AutoML 비교 → 정규화 특성(L1+L2)을 근거로 Elastic Net 최종 선택, Grid Search + LOOCV 튜닝으로 소표본 과적합 통제",
+      "데이터 검증(validation) 총괄 · Streamlit 대시보드 구축",
+    ],
+    stack: ["Python", "scikit-learn", "Pandas", "Streamlit", "Plotly"],
+    results: [
+      "아동노동 예측 모델 R² 59.18% (190개국, Yeo-Johnson 적용)",
+      "핵심 예측 지표 도출 (HDI·기초 위생·출생률)",
+      "고발전국에서 GGI≈0.7일 때 아동노동 최저인 비선형 패턴 발견",
+      "GGI/아동노동 인터랙티브 대시보드 2종 구축",
+    ],
+    period: "2024.08 – 2024.12",
+    diagrams: [{ src: "assets/diagrams/c05-gendergap-pipeline.svg", cap: "분석 파이프라인" }],
+    pdf: null, // 파일 수령 후 복원: { label: "보고서 PDF", file: "assets/pdf/gender-gap.pdf" }
+    privateNote: "보고서는 스폰서 공개 조건 확인 후 게시",
+  },
+
+  /* ── 8. 의회 이념 예측 ────────────────────────────────── */
+  {
+    id: "ideology",
+    tags: ["DS·ML"],
+    catLabel: "DS·ML (NLP) — Univ. of Rochester 대학원 (2인 팀)",
+    title: "트윗 기반 미 의회 DW-NOMINATE 이념 점수 예측",
+    subtitle: null,
+    oneLiner: "미 의회 의원 트윗 47만 건(2008–2020)으로 2차원 이념 점수를 예측 — DistilBERT 임베딩과 H2O AutoML Stacked Ensemble로 텍스트 기반 정치 이념 정량화 파이프라인 구축.",
+    problem: "DW-NOMINATE는 표결 기록 기반이라 실시간 이념 변화 포착 불가 → 소셜미디어 텍스트로 예측 가능성 검증.",
+    roleIntro: "2인 팀 · 전 과정 공동 수행",
+    role: [
+      "EDA: 이념 4분면 그룹별 해시태그 분석 · ridge plot으로 2008–2020 보수 진영의 이념 극단화 심화 패턴 발견",
+      "토픽 모델링: LDA vs NMF 비교 → 주제 경계 명확성 기준 NMF 우위 도출",
+      "모델링: H2O AutoML(GBM·XGBoost·GLM 비교) → Stacked Ensemble 최종 선정",
+      "텍스트 임베딩: DistilBERT 768차원, T4 GPU + mixed-precision 배치 처리로 47만 건 인코딩",
+      "한계 분석: H2O 메모리 제약 → 샘플 축소 실험(100→60%) → 고차원 임베딩·메모리·피처 복잡도로 원인 진단, PCA 등 개선 방향 제시",
+    ],
+    stack: ["Python", "H2O AutoML", "XGBoost", "DistilBERT", "PyTorch (CUDA AMP)", "LDA/NMF"],
+    results: [
+      "13.5만 건 테스트셋에서 Stacked Ensemble이 단일 모델 대비 일관된 우위 확인",
+      "보수 진영의 시계열 극단화 패턴 정량 발견",
+      "대규모 텍스트 임베딩 파이프라인 구축과 실패 원인 분석·문서화 (메모리 제약 하 실험 설계)",
+    ],
+    period: null,
+    diagrams: [],
+    pdf: null, // 파일 수령 후 복원: { label: "논문 PDF", file: "assets/pdf/ideology.pdf" }
+    privateNote: null,
+  },
+
+  /* ── 9. ChiEAC ────────────────────────────────────────── */
+  {
+    id: "chieac",
+    tags: ["DS·ML", "AI Engineering"],
+    catLabel: "DS·ML + AI Eng — 실무 (Chicago Education Advocacy Cooperative · Data Scientist, Part-time)",
+    title: "학업 이탈 위험 모델링 + 정보 접근성 RAG 챗봇",
+    subtitle: null,
+    oneLiner: "시카고 소외계층 학생의 학업 이탈 위험을 조기 식별하는 분류·추세 모델을 구축하고, RAG 기반 텔레그램 챗봇으로 학생들의 정보 접근 장벽까지 낮춘 분석–개입 연결형 프로젝트.",
+    problem: "학업 이탈은 사후 대응이 늦음 — 조기 개입용 위험 신호 식별 필요. 인종·지역별 격차로 형평성 분해 분석 필수. 미성년자 민감정보와 AI 답변 안전성이 모두 설계 전제 조건.",
+    roleIntro: null,
+    role: [
+      "데이터 통합·전처리: 인종별 졸업·중퇴율(CDR) 25년치(1999–2024)를 4년/5년 코호트 구조로 표준화 + 텍스트 데이터 정규화·감성 분석 전처리",
+      "위험 식별 모델(2단): 분류 모델로 이탈 위험 학생 식별 → 통계·추세 모델링으로 향후 위험 예측, Cross-validation 검증",
+      "형평성 분석: 인종별 코호트 분해로 격차 추세 정량화",
+      "Secure 대시보드: 민감 학생 데이터 접근 관리를 전제로 한 Streamlit·Tableau 대시보드 — 정책 방향 수립 지원",
+      "정보 접근성 RAG 챗봇: 기관 자료 지식베이스 기반 GPT 챗봇을 텔레그램에 연동 — 접근성(무료·저사양 기기·설치 장벽 없음) 기준 채널 선택, 재직 기간 중 실사용 운영",
+      "미성년자 안전 설계: 1차 입력 필터링 + 지식베이스 밖 질문은 답변 회피(grounded-only) — 유해 답변·할루시네이션 이중 차단",
+    ],
+    stack: ["Python", "Pandas", "scikit-learn (분류·CV)", "감성 분석 (NLP)", "OpenAI GPT", "RAG", "Telegram Bot API", "Streamlit", "Tableau"],
+    results: [
+      "조기 개입 대상 식별 체계 구축",
+      "25년치 인종별 격차 추세 정량화",
+      "민감정보 보호와 분석 활용을 양립시킨 대시보드 운영",
+      "RAG 챗봇 실사용 운영으로 분석→개입 연결 완성",
+    ],
+    period: "2025.05 – 2026.04",
+    diagrams: [
+      { src: "assets/diagrams/c09-two-stage-model.svg", cap: "2단 모델 구조" },
+      { src: "assets/diagrams/c09-chatbot-safety.svg", cap: "챗봇 안전장치 흐름" },
+    ],
+    pdf: null,
+    privateNote: "회사 자산으로 코드 비공개",
+  },
+
+  /* ── 10. MyMedGlobal ──────────────────────────────────── */
+  {
+    id: "mymedglobal",
+    tags: ["DS·ML"],
+    catLabel: "DS·ML — 실무 (MyMedGlobal · Data Analyst, Part-time)",
+    title: "헬스케어 마켓플레이스 데이터 분석 — 신뢰도·추천 시스템 프로토타입",
+    subtitle: null,
+    oneLiner: "50+개국 5,000+ 의료기관 데이터를 다루는 의료관광 플랫폼에서 리뷰 신뢰도(가짜 리뷰 탐지)·프로필 품질 스코어링·위치 기반 추천 프로토타입을 설계해 데이터 무결성과 매칭 품질 개선.",
+    problem: "다국가 클리닉·환자를 잇는 마켓플레이스 특성상 리뷰 조작 위험, 프로필 품질 편차, 환자–클리닉 매칭이 핵심 과제.",
+    roleIntro: null,
+    role: [
+      "가짜 리뷰 탐지 프로토타입: 단시간 대량 작성 · 동일 IP 지역 · TF-IDF 코사인 유사도 기반 중복/상투 문구의 3중 규칙 설계 (라벨 데이터 부재 → 규칙 기반 우선의 콜드스타트 접근)",
+      "클리닉 완성도 스코어: 인증·응답률·리뷰 등 11개 지표 가중 스코어링(100점 만점) → 미완성/비활성 프로필 자동 플래깅",
+      "Patients Like You 추천: geopy 측지 거리 + 연령 + 조건/관심사 텍스트 유사도 결합 → 유사 환자의 조회 이력 기반 클리닉 추천",
+      "리뷰 감성 분석: VADER로 클리닉별 평균 감성·지배 감성 집계",
+      "클리닉 세그먼테이션: TF-IDF + K-Means (5 클러스터, PCA 시각화, silhouette 0.392)",
+      "지역별 시술 트렌드 분석: 검색 로그 국가별 집계 → Top 10 산출 → 프론트 연동용 데이터 파이프라인",
+    ],
+    stack: ["Python", "Pandas", "scikit-learn (TF-IDF·K-Means·PCA)", "NLTK VADER", "geopy", "Matplotlib/Seaborn"],
+    results: [
+      "50+개국 데이터 무결성 관리 체계(가짜 리뷰 탐지·완성도 스코어) 프로토타입 구축",
+      "위치+텍스트 결합 추천 로직 설계",
+      "검색 트렌드 파이프라인으로 지역별 수요 패턴 도출",
+    ],
+    period: "2025.03 – 2026.03",
+    diagrams: [
+      { src: "assets/diagrams/c07-fake-review.svg", cap: "가짜 리뷰 탐지 3중 규칙" },
+      { src: "assets/diagrams/c07-patients-like-you.svg", cap: "Patients Like You 추천 흐름" },
+      { src: "assets/diagrams/c07-completeness-score.svg", cap: "완성도 스코어 구조" },
+    ],
+    pdf: null,
+    privateNote: "사내 실데이터 포함으로 코드 비공개",
+  },
+
+  /* ── 11. Spark 실시간 감성 파이프라인 ─────────────────── */
+  {
+    id: "spark-streaming",
+    tags: ["Data Eng", "DS·ML"],
+    catLabel: "Data Eng · ML — Univ. of Rochester DSCC-402 최종 프로젝트 (개인)",
+    title: "Spark Streaming 기반 실시간 트윗 감성 분석 파이프라인",
+    subtitle: null,
+    oneLiner: "Spark Structured Streaming + Delta Lake 메달리온 아키텍처로 대규모 트윗 스트림을 실시간 수집·변환하고, HuggingFace transformer를 Spark UDF로 병렬 추론해 MLflow로 성능을 추적하는 엔드투엔드 스트리밍 파이프라인.",
+    problem: "대규모 소셜 텍스트 감성 추적을 배치로 하면 지연 발생 — 수집부터 추론·집계·모니터링까지 스트림 단일 파이프라인 필요.",
+    roleIntro: "개인 과제 · 전체 단독",
+    role: [
+      "메달리온 3계층: Autoloader(cloudFiles) JSON 스트림 수집 → Bronze(원본) → Silver(타임스탬프 변환·멘션 explode·정제) → Gold(추론 결과), Delta Lake + 체크포인트 + 스키마 병합",
+      "분산 추론: MLflow 레지스트리의 HF transformer를 spark_udf로 로드 → 스트림 병렬 감성 추론",
+      "MLOps: precision/recall/F1 + confusion matrix 아티팩트 + 모델·Delta 테이블 버전을 MLflow 실험으로 자동 기록",
+      "집계·시각화: 멘션별 감성 집계 → Top 20 pos/neg 차트",
+      "성능 진단: Spark UI로 Spill/Skew/Shuffle/Storage/Serialization 5차원 분석 — spill 0·균등 파티션 검증, AQE·셔플 파티션 튜닝",
+    ],
+    stack: ["PySpark (Structured Streaming)", "Delta Lake", "Databricks", "MLflow", "HuggingFace Transformers"],
+    results: [
+      "Run-all 엔드투엔드 재현 가능 파이프라인 완성",
+      "스트리밍 추론 성능 지표의 MLflow 자동 기록 체계",
+      "5차원 성능 진단으로 병목 없음 검증",
+    ],
+    period: "2024.01 – 2024.05",
+    diagrams: [{ src: "assets/diagrams/c10-medallion.svg", cap: "메달리온 파이프라인 + MLflow 추적" }],
+    pdf: null,
+    privateNote: "코드 비공개",
+  },
+
+  /* ── 12. 정신건강 분류 ────────────────────────────────── */
+  {
+    id: "mental-health",
+    tags: ["DS·ML"],
+    catLabel: "DS·ML (Data Mining) — Univ. of Rochester (2인 팀)",
+    title: "정신질환 분류의 정확도 함정 진단과 FP-Growth 증강 분류",
+    subtitle: null,
+    oneLiner: "SAMHSA MHCLD 650만 건에서 13개 정신질환 플래그를 5개 분류기로 벤치마크 — 심한 클래스 불균형의 정확도 함정(98% 정확도·F1 0.02)을 진단하고, FP-Growth 패턴 마이닝 기반 피처 재정의로 F1을 0.69–0.87까지 개선.",
+    problem: "정신질환 플래그는 극심한 클래스 불균형 — 단순 분류는 높은 정확도에도 소수 클래스(실제 환자)를 거의 못 잡음.",
+    roleIntro: "2인 팀 · 전 과정 공동 수행",
+    role: [
+      "전처리: 650만 행 rdata 처리(pyreadr) · 코드북 기반 결측(-9) 처리 · 범주형 인코딩",
+      "Method 1 (직접 분류): 5개 분류기 × 13개 플래그, stratified k-fold CV — CatBoost 우세하나 불균형 플래그에서 F1 붕괴 확인",
+      "Method 2 (FP-Growth 증강): 트랜잭션 변환 → FP-Growth(support 0.1) → association rule mining → lift>1 프루닝 → antecedent 기반 피처 재정의 → RandomUnderSampler",
+      "진단·비교: 정확도 함정 정량화 (CONDUCTFLG F1 0.022→0.786, BIPOLARFLG 0.043→0.740)",
+    ],
+    stack: ["Python", "scikit-learn", "XGBoost", "CatBoost", "LightGBM", "mlxtend (FP-Growth)", "imbalanced-learn", "pyreadr"],
+    results: [
+      "13개 플래그 전반 F1 0.69–0.87 달성",
+      "패턴 마이닝 전처리가 불균형 의료 데이터 분류를 개선함을 정량 입증",
+      "임상 진단 보조 관점의 시사점 제시",
+    ],
+    period: null,
+    diagrams: [{ src: "assets/diagrams/c11-two-method.svg", cap: "직접 분류 vs FP-Growth 증강 비교" }],
+    pdf: null,
+    privateNote: "보고서 비공개",
+  },
+
+  /* ── 13. COVID-19 Ohio ────────────────────────────────── */
+  {
+    id: "covid-ohio",
+    tags: ["DS·ML"],
+    catLabel: "DS·ML — Univ. of Rochester 통계적 ML Kaggle 프로젝트 (2인 팀)",
+    title: "소셜미디어 awareness 기반 COVID-19 확진자 예측",
+    subtitle: null,
+    oneLiner: "4,600만 트윗 파생 awareness 피처 + 카운티 인구통계로 오하이오 확진자를 예측 — 역전된 30/70 분할(학습 3,141 vs 테스트 7,331)에서 XGBoost 정규화로 최고 일반화 성능(R² 0.835), 40팀 중 Top 10.",
+    problem: "학습셋이 테스트셋의 절반 이하인 비정상 분할 — 과적합 통제와 일반화가 승부처인 과제 설계.",
+    roleIntro: "2인 팀 · 전 과정 공동 수행",
+    role: [
+      "전처리: 날짜 인덱스 정규식 변환 · 카운티를 확진 심각도 랭킹으로 인코딩 · 확진 0건 구간(date_index<80) 필터링",
+      "피처 실험(시도→검증→폐기 기록): 유사도 피처 PCA+스펙트럴 임베딩(무효 → 폐기) · 로그 타깃 변환(MSE 악화 → 폐기) · 사회적 피처 통합(성능 개선 → 채택)",
+      "모델 비교: DT/RF/ExtraTrees/XGBoost — 학습 1위 RF(0.950)가 테스트에서 과적합으로 역전, XGBoost 정규화의 일반화 우위 입증",
+      "EDA: 토픽별 awareness 랭킹 · 카운티별 확진/사망 per-capita 지도 시각화",
+    ],
+    stack: ["Python", "XGBoost", "scikit-learn", "Pandas", "Matplotlib"],
+    results: [
+      "Kaggle 리더보드 Top 10 / 40팀",
+      "테스트 R² 0.835 (4개 모델 중 최고)",
+      "소규모 학습셋 조건의 정규화 기반 일반화 전략 입증",
+      "awareness–확진 패턴의 공중보건 시사점 도출",
+    ],
+    period: null,
+    diagrams: [{ src: "assets/diagrams/c12-model-comparison.svg", cap: "모델 비교 — 과적합 역전" }],
+    pdf: null, // 파일 수령 후 복원: { label: "보고서 PDF", file: "assets/pdf/covid-ohio.pdf" }
+    privateNote: "보고서 PDF는 공동저자 동의 확인 후 공개",
+  },
+
+  /* ── 14. GitHub 네트워크 분석 ─────────────────────────── */
+  {
+    id: "github-network",
+    tags: ["DS·ML"],
+    catLabel: "DS·ML (Graph) — Univ. of Rochester (2인 팀)",
+    title: "GitHub 소셜 네트워크 링크 예측·노드 분류 — 임베딩 증강 전통 모델 vs GNN 비교",
+    subtitle: null,
+    oneLiner: "37,700 노드·289K 엣지 GitHub 네트워크에서 3단계 방법론(베이스라인 → Node2Vec 증강 → GCN)을 링크 예측·노드 분류에 비교 — Node2Vec+RF가 F1 0.934로 GCN을 능가함을 입증.",
+    problem: "그래프 과제에서 GNN이 항상 최선인가? — 임베딩 증강 전통 모델과의 공정 비교로 검증.",
+    roleIntro: "2인 팀 · 전 과정 공동 수행",
+    role: [
+      "네트워크 EDA: 차수 분포(최대 9,458 vs 평균 15.33) → power-law 피팅(α=2.573)으로 scale-free 구조 정량 확인 · assortativity −0.075 · eccentricity 분포 (Networkit)",
+      "3단계 비교 설계: RF·로지스틱 베이스라인 → One-hot + Node2Vec 임베딩 증강 → 3-layer GCN(dropout 0.5, Adam 지수 감쇠, negative sampling, early stopping)",
+      "링크 예측: Node2Vec+RF F1 0.9341 / 정확도 0.9362 달성",
+      "검증적 발견: GCN이 두 과제 모두에서 전통 모델에 열세 — GAN 시도 포함 실패 원인 분석·문서화",
+    ],
+    stack: ["Python", "NetworkX/Networkit", "Node2Vec", "PyTorch (GCN)", "scikit-learn", "powerlaw"],
+    results: [
+      "링크 예측 F1 0.9341 (최고 성능)",
+      "\u201c임베딩 증강 전통 모델 > GNN\u201d 조건을 실증",
+      "scale-free 네트워크 구조 정량 분석",
+      "GAN·GCN 실패 분석 문서화",
+    ],
+    period: null,
+    diagrams: [{ src: "assets/diagrams/c13-three-stage.svg", cap: "3단계 방법론 비교" }],
+    pdf: null, // 파일 수령 후 복원: { label: "보고서 PDF", file: "assets/pdf/github-network.pdf" }
+    privateNote: "보고서 PDF는 공동저자 동의 확인 후 공개",
+  },
+
+  /* ── 15. DUOGREEN RPA ─────────────────────────────────── */
+  {
+    id: "duogreen-rpa",
+    tags: ["RPA·자동화"],
+    catLabel: "RPA — 실무 (DUOGREEN Inc.)",
+    title: "RPA 전사 도입 — Supply Chain 95% 자동화",
+    subtitle: null,
+    oneLiner: "미국 이커머스 스타트업에서 RPA를 독학·도입해 Supply Chain 프로세스의 95%를 자동화하고 전사 4개 부문으로 확산.",
+    problem: "아마존 카테고리 Top 3 제품 판매 NJ 스타트업. 소수 인원이 Supply Chain·Marketing·Finance·Market Research 4개 부문 전체를 담당, 업무 강도·수작업 오류 위험 높음.",
+    roleIntro: null,
+    role: [
+      "RPA 독학 → 본인 업무 적용 → CEO·임원 발표 → 전사 도입 주도",
+      "RPA 라이프사이클 전 단계(대상 선정 → 설계 → 개발 → 테스트 → 운영) 단독 수행",
+    ],
+    stack: ["UiPath (Desktop)"],
+    results: [
+      "Supply Chain 프로세스 95% 자동화",
+      "건당 처리시간 1시간 → 10분 이내 (약 83% 단축)",
+      "자동화 대상 업무 처리 비용 30% 절감",
+      "수작업 오입력 감소로 정확도 향상",
+    ],
+    period: "2021.09 – 2022.05",
+    diagrams: [
+      { src: "assets/diagrams/c01-supply-chain.svg", cap: "Supply Chain 자동화" },
+      { src: "assets/diagrams/c01-market-research.svg", cap: "Market Research 자동화" },
+      { src: "assets/diagrams/c01-finance.svg", cap: "Finance 자동화" },
+      { src: "assets/diagrams/c01-marketing.svg", cap: "Marketing 자동화" },
+    ],
+    pdf: null,
+    privateNote: null,
+  },
+];

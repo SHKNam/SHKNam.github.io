@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1404 236" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="Outbox 동기화 + 하이브리드 변환">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">OUTBOX 동기화 + 하이브리드 변환</text>
+<path d="M198,89.0 L262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M348.0,118 L348.0,152" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)" stroke-dasharray="5 4"/>
+<text x="348.0" y="128.0" text-anchor="middle" font-size="11" fill="#8B99B3">누락 시</text>
+<path d="M434,181.0 C466.0,181.0 466.0,89.0 498,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 L498,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,89.0 L734,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M906,89.0 L970,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M1142,89.0 L1206,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M1292.0,118 L1292.0,152" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="26" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="112.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">문서 업로드</text>
+<text x="112.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">PDF · Office · 이미지</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">Docling 1차 변환</text>
+<text x="348.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">TableFormer + EasyOCR</text>
+<rect x="262" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="177.0" text-anchor="middle" font-size="12" font-weight="600" fill="#E8EDF6">GPT-4o Vision 2차</text>
+<text x="348.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">누락 청크만 · hard cap</text>
+<rect x="498" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">Markdown 노트</text>
+<text x="584.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">BlockNote 에디터</text>
+<rect x="734" y="60" width="172" height="58" rx="6" fill="#151D2E" stroke="#F0B35C" stroke-width="1.4"/>
+<line x1="734" y1="70" x2="906" y2="70" stroke="#F0B35C" stroke-width="1" opacity="0.55"/>
+<text x="820.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">MSSQL (본문)</text>
+<rect x="970" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="1056.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">Outbox 패턴</text>
+<text x="1056.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">비동기 동기화 + 대사</text>
+<rect x="1206" y="60" width="172" height="58" rx="6" fill="#151D2E" stroke="#F0B35C" stroke-width="1.4"/>
+<line x1="1206" y1="70" x2="1378" y2="70" stroke="#F0B35C" stroke-width="1" opacity="0.55"/>
+<text x="1292.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">FalkorDB (그래프)</text>
+<rect x="1206" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="1292.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">3D 지식 그래프</text>
+<text x="1292.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">3-Shell 동심구 레이아웃</text>
+</svg>

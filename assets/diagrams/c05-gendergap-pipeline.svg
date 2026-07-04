@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1404 144" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="GGI·아동노동 예측 파이프라인">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">GGI·아동노동 예측 파이프라인</text>
+<path d="M198,89.0 L262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 L498,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,89.0 L734,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M906,89.0 L970,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M1142,89.0 L1206,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="26" y="60" width="172" height="58" rx="6" fill="#151D2E" stroke="#F0B35C" stroke-width="1.4"/>
+<line x1="26" y1="70" x2="198" y2="70" stroke="#F0B35C" stroke-width="1" opacity="0.55"/>
+<text x="112.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">데이터 수집</text>
+<text x="112.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">WB·ILO·UNICEF·FB API</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">표준화·결측 보정</text>
+<text x="348.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">KNN·Yeo-Johnson</text>
+<rect x="498" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">피처 선택</text>
+<text x="584.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">상관 기반 39 features</text>
+<rect x="734" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="820.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">모델 비교·튜닝</text>
+<text x="820.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">Elastic Net · LOOCV</text>
+<rect x="970" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="1056.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">예측·해석</text>
+<text x="1056.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">R² 59.18% (190개국)</text>
+<rect x="1206" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="1292.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">Streamlit</text>
+<text x="1292.0" y="101.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">정책 대시보드</text>
+</svg>

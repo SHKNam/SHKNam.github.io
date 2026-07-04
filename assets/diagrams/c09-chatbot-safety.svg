@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 236" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="RAG 챗봇 안전장치 흐름">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">RAG 챗봇 안전장치 흐름</text>
+<path d="M198,89.0 L262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 L498,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="466.0" y="82.0" text-anchor="middle" font-size="11" fill="#8B99B3">통과</text>
+<path d="M348.0,118 L348.0,152" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="348.0" y="128.0" text-anchor="middle" font-size="11" fill="#8B99B3">차단</text>
+<path d="M670,89.0 L734,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="702.0" y="82.0" text-anchor="middle" font-size="11" fill="#8B99B3">근거 있음</text>
+<path d="M670,89.0 C702.0,89.0 702.0,181.0 734,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<text x="702.0" y="128.0" text-anchor="middle" font-size="11" fill="#8B99B3">근거 없음</text>
+<rect x="26" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="112.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">학생 질문</text>
+<text x="112.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">Telegram</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">1차 입력 필터</text>
+<rect x="498" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">RAG 지식베이스</text>
+<text x="584.0" y="101.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">조회</text>
+<rect x="734" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="820.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">근거 기반 답변</text>
+<text x="820.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">grounded-only</text>
+<rect x="734" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#F0B35C" stroke-width="1.8"/>
+<text x="820.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#FFD9A0">답변 회피</text>
+<text x="820.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">지식베이스 밖 질문</text>
+<rect x="262" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#F0B35C" stroke-width="1.8"/>
+<text x="348.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#FFD9A0">유해 입력 차단</text>
+</svg>

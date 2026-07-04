@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1168 236" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="Graph RAG × 멀티 에이전트 아키텍처">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">GRAPH RAG × 멀티 에이전트 아키텍처</text>
+<path d="M198,89.0 L262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 L498,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 C466.0,89.0 466.0,181.0 498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,89.0 L734,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,181.0 C702.0,181.0 702.0,89.0 734,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M906,89.0 L970,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,89.0 C820.0,89.0 820.0,181.0 970,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,181.0 L970,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="26" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="112.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">운영 데이터</text>
+<text x="112.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">프로젝트·인력·고객·재무</text>
+<rect x="262" y="60" width="172" height="58" rx="6" fill="#151D2E" stroke="#F0B35C" stroke-width="1.4"/>
+<line x1="262" y1="70" x2="434" y2="70" stroke="#F0B35C" stroke-width="1" opacity="0.55"/>
+<text x="348.0" y="85.0" text-anchor="middle" font-size="12" font-weight="600" fill="#E8EDF6">Neo4j</text>
+<text x="348.0" y="101.0" text-anchor="middle" font-size="12" font-weight="600" fill="#E8EDF6">Knowledge Graph</text>
+<rect x="498" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">Graph RAG 챗봇</text>
+<text x="584.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">자연어→그래프 조회→GPT</text>
+<rect x="498" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="169.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">멀티 에이전트</text>
+<text x="584.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">페르소나 토론</text>
+<text x="584.0" y="201.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">해결책·보고서 생성</text>
+<rect x="734" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="820.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">Flask REST API</text>
+<text x="820.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">6종 엔드포인트</text>
+<rect x="970" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="1056.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">Vue 3 + D3.js</text>
+<text x="1056.0" y="101.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">대시보드</text>
+<rect x="970" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="1056.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">Power Automate</text>
+<text x="1056.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">Teams·메일 자동 발송</text>
+</svg>

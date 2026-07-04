@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 696 328" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="3단계 방법론 비교">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">3단계 방법론 비교</text>
+<path d="M198,181.0 C230.0,181.0 230.0,89.0 262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M198,181.0 L262,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M198,181.0 C230.0,181.0 230.0,273.0 262,273.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,181.0 L498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,273.0 L498,273.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="26" y="152" width="172" height="58" rx="6" fill="#151D2E" stroke="#F0B35C" stroke-width="1.4"/>
+<line x1="26" y1="162" x2="198" y2="162" stroke="#F0B35C" stroke-width="1" opacity="0.55"/>
+<text x="112.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">GitHub 네트워크</text>
+<text x="112.0" y="193.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">37.7K 노드 · 289K 엣지</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="85.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">① 베이스라인</text>
+<text x="348.0" y="101.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">RF · 로지스틱</text>
+<rect x="262" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">② Node2Vec</text>
+<text x="348.0" y="193.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">임베딩 증강</text>
+<rect x="262" y="244" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="269.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">③ 3-layer GCN</text>
+<text x="348.0" y="285.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">dropout·neg sampling</text>
+<rect x="498" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="584.0" y="169.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">Node2Vec + RF</text>
+<text x="584.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">F1 0.9341</text>
+<text x="584.0" y="201.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">최고 성능</text>
+<rect x="498" y="244" width="172" height="58" rx="12" fill="#151D2E" stroke="#F0B35C" stroke-width="1.8"/>
+<text x="584.0" y="269.0" text-anchor="middle" font-size="13" font-weight="600" fill="#FFD9A0">GCN 열세</text>
+<text x="584.0" y="285.0" text-anchor="middle" font-size="10.5" fill="#8B99B3">실패 원인 분석·문서화</text>
+</svg>

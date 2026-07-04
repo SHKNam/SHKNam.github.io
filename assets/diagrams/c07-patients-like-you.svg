@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 328" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif" role="img" aria-label="Patients Like You 추천 흐름">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#46557A"/></marker></defs>
+<text x="26" y="22" font-family="'JetBrains Mono','SF Mono',monospace" font-size="12" letter-spacing="2" fill="#8B99B3">PATIENTS LIKE YOU 추천 흐름</text>
+<path d="M198,181.0 C230.0,181.0 230.0,89.0 262,89.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M198,181.0 L262,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M198,181.0 C230.0,181.0 230.0,273.0 262,273.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,89.0 C466.0,89.0 466.0,181.0 498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,181.0 L498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M434,273.0 C466.0,273.0 466.0,181.0 498,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<path d="M670,181.0 L734,181.0" fill="none" stroke="#46557A" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="26" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="112.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">환자 프로필</text>
+<rect x="262" y="60" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="93.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">geopy 측지 거리</text>
+<rect x="262" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">연령 유사도</text>
+<rect x="262" y="244" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="348.0" y="269.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">조건·관심사</text>
+<text x="348.0" y="285.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">텍스트 유사도</text>
+<rect x="498" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#2C3A55" stroke-width="1.4"/>
+<text x="584.0" y="185.0" text-anchor="middle" font-size="13" font-weight="600" fill="#E8EDF6">유사 환자 매칭</text>
+<rect x="734" y="152" width="172" height="58" rx="12" fill="#151D2E" stroke="#7C9CF5" stroke-width="1.8"/>
+<text x="820.0" y="177.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">조회 이력 기반</text>
+<text x="820.0" y="193.0" text-anchor="middle" font-size="13" font-weight="600" fill="#C3D2FF">클리닉 추천</text>
+</svg>

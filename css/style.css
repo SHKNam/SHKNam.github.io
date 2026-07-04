@@ -42,6 +42,12 @@ a:hover { text-decoration: underline; }
     radial-gradient(520px 300px at 8% 10%, rgba(240,179,92,0.05), transparent 60%);
   border-bottom: 1px solid var(--border-soft);
 }
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 64px;
+  align-items: start;
+}
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 13px;
@@ -90,6 +96,45 @@ a:hover { text-decoration: underline; }
 .journey-sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; line-height: 1.45; padding-right: 14px; }
 
 .hero-links { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── 히어로 오른쪽 열: 프로필 사진 + 경력 타임라인 ── */
+.hero-side { display: flex; flex-direction: column; gap: 32px; }
+.hero-photo {
+  width: 168px; height: 168px; border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  box-shadow: 0 0 0 6px rgba(124,156,245,0.08), 0 14px 34px rgba(0,0,0,0.35);
+}
+.hero-photo.hidden { display: none; }
+.careers-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.career-item { position: relative; padding: 0 0 18px 24px; }
+.career-item::before {            /* 노드 점 — 여정 라인과 동일 문법 */
+  content: "";
+  position: absolute; top: 5px; left: 0;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.career-item:first-child::before { background: var(--accent); box-shadow: 0 0 12px rgba(124,156,245,0.6); }
+.career-item::after {             /* 연결선 */
+  content: "";
+  position: absolute; top: 20px; left: 4.5px; bottom: 2px;
+  width: 1.5px;
+  background: linear-gradient(180deg, var(--accent), var(--border));
+  opacity: 0.55;
+}
+.career-item:last-child { padding-bottom: 0; }
+.career-item:last-child::after { display: none; }
+.career-period { font-family: var(--font-mono); font-size: 11px; color: var(--amber); letter-spacing: 0.3px; }
+.career-org { font-weight: 700; font-size: 14px; margin-top: 2px; }
+.career-role { font-size: 12.5px; color: var(--muted); line-height: 1.45; margin-top: 1px; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 9px 18px;
@@ -270,12 +315,6 @@ body.modal-open { overflow: hidden; }
    ============================================================ */
 .footer { border-top: 1px solid var(--border-soft); background: var(--surface2); }
 .footer-inner { display: flex; align-items: center; gap: 20px; padding: 40px 24px; flex-wrap: wrap; }
-.footer-photo {
-  width: 64px; height: 64px; border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--border);
-}
-.footer-photo.hidden { display: none; }
 .footer-name { font-weight: 700; font-size: 16px; }
 .footer-meta { font-size: 13px; color: var(--muted); margin-top: 2px; }
 .footer-actions { margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap; }
@@ -283,6 +322,9 @@ body.modal-open { overflow: hidden; }
 /* ============================================================
    반응형 · 접근성
    ============================================================ */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }   /* 오른쪽 열이 아래로 스택 */
+}
 @media (max-width: 640px) {
   .hero { padding: 64px 0 52px; }
   .journey { flex-direction: column; gap: 22px; }

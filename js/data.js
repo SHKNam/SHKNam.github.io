@@ -9,7 +9,7 @@ const PROFILE = {
   nameEn: "Seunghyun Nam",
   heroTag: "Gen AI · Data Scientist",
   tagline: "RPA 자동화에서 Graph RAG까지 — 자동화와 데이터 사이언스를 잇는 Gen AI · Data Scientist",
-  about: "사내 최초로 RPA를 도입해 전사로 확장하며 자동화 대상 업무의 처리 비용을 30% 절감했고, 그 과정에서 자동화가 만드는 효율과 임팩트에 매료됐습니다. 이후 데이터 사이언스로 영역을 넓혀 데이터에서 인사이트를 끌어내는 예측·분석 모델을 구축했고(예: 주가 예측 정확도 14.2% 개선), 현재는 삼일PwC에서 LLM 기반 AI Agent와 Graph RAG 시스템을 설계·개발하고 있습니다. 반복 업무를 자동화하고, 데이터로 의사결정의 근거를 만들며, AI로 실제 임팩트를 내는 것 — 이 셋을 하나로 잇는 것이 제가 일하는 방식입니다.",
+  about: "첫 직장에서 사내 최초로 RPA를 도입해 전사로 확산하며 자동화 대상 업무의 처리 비용을 30% 절감했고, 자동화가 만드는 임팩트에 매료되어 데이터 사이언스로 영역을 넓혔습니다. University of Rochester에서 예측·분석 모델링을 다졌고(예: 주가 예측 정확도 14.2% 개선), 현재는 삼일PwC에서 LLM 기반 AI Agent와 Graph RAG 시스템을 설계·개발하고 있습니다. 요즘은 Palantir Foundry의 온톨로지처럼 흩어진 데이터를 조직의 의사결정과 액션에 직접 연결하는 접근에 관심을 두고, Graph RAG 경험을 그 방향으로 확장하는 중입니다. 반복 업무를 자동화하고, 데이터로 근거를 만들고, AI로 실제 임팩트를 내는 것 — 이 셋을 하나로 잇는 것이 제가 일하는 방식입니다.",
   location: "서울, 대한민국",
   email: "shknam3262@gmail.com",
   github: "https://github.com/SHKNam",
@@ -20,6 +20,14 @@ const PROFILE = {
     { label: "RPA 자동화", sub: "전사 도입 · 비용 30% 절감" },
     { label: "Data Science", sub: "예측·분석 모델링 (MS, Univ. of Rochester)" },
     { label: "Gen AI", sub: "AI Agent · Graph RAG (삼일PwC)" },
+  ],
+  careers: [
+    { period: "2026.03 – 현재", org: "삼일PwC", role: "AI Scientist Intern" },
+    { period: "2025.05 – 2026.04", org: "ChiEAC", role: "Data Scientist (Part-time)" },
+    { period: "2025.03 – 2026.03", org: "MyMedGlobal", role: "Data Analyst (Part-time)" },
+    { period: "2024.08 – 2024.12", org: "MacroXStudio", role: "Data Scientist (Contract)" },
+    { period: "2024.06", org: "The Sparks Foundation", role: "Data Science Intern" },
+    { period: "2021.09 – 2022.05", org: "DUOGREEN", role: "Business Process Automation Analyst / Business Analyst" },
   ],
 };
 

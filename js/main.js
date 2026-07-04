@@ -28,10 +28,22 @@
     <a class="btn" href="${esc(PROFILE.linkedin)}" target="_blank" rel="noopener">LinkedIn ↗</a>
     <a class="btn" href="mailto:${esc(PROFILE.email)}">이메일 보내기</a>`;
 
+  /* ── 히어로 오른쪽 열: 프로필 사진 + 경력 타임라인 ── */
+  const heroPhoto = $("#hero-photo");
+  heroPhoto.src = PROFILE.photo;
+  heroPhoto.onerror = () => heroPhoto.classList.add("hidden");
+
+  $("#careers").innerHTML = PROFILE.careers
+    .map(
+      (c) => `<div class="career-item">
+        <div class="career-period">${esc(c.period)}</div>
+        <div class="career-org">${esc(c.org)}</div>
+        <div class="career-role">${esc(c.role)}</div>
+      </div>`
+    )
+    .join("");
+
   /* ── 푸터 ── */
-  const photo = $("#footer-photo");
-  photo.src = PROFILE.photo;
-  photo.onerror = () => photo.classList.add("hidden");
   $("#footer-name").textContent = `${PROFILE.name} · ${PROFILE.heroTag}`;
   $("#footer-meta").textContent = `${PROFILE.location} · ${PROFILE.email}`;
   $("#footer-actions").innerHTML = `

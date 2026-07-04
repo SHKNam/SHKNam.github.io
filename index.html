@@ -16,17 +16,27 @@
 
   <!-- ── 히어로 ─────────────────────────────────────────── -->
   <header class="hero">
-    <div class="wrap">
-      <p class="eyebrow" id="hero-tag"></p>
-      <h1 class="hero-name"><span id="hero-name-ko"></span> <span class="hero-name-en" id="hero-name-en"></span></h1>
-      <p class="tagline" id="hero-tagline"></p>
+    <div class="wrap hero-grid">
+      <div class="hero-main">
+        <p class="eyebrow" id="hero-tag"></p>
+        <h1 class="hero-name"><span id="hero-name-ko"></span> <span class="hero-name-en" id="hero-name-en"></span></h1>
+        <p class="tagline" id="hero-tagline"></p>
 
-      <!-- 시그니처: 커리어 여정 파이프라인 -->
-      <div class="journey" id="journey" aria-label="커리어 여정"></div>
+        <!-- 시그니처: 커리어 여정 파이프라인 -->
+        <div class="journey" id="journey" aria-label="커리어 여정"></div>
 
-      <p class="about" id="hero-about"></p>
+        <p class="about" id="hero-about"></p>
 
-      <div class="hero-links" id="hero-links"></div>
+        <div class="hero-links" id="hero-links"></div>
+      </div>
+
+      <aside class="hero-side">
+        <img id="hero-photo" class="hero-photo" alt="남승현 프로필 사진" />
+        <div class="careers-block">
+          <p class="careers-label">Career</p>
+          <div class="careers" id="careers" aria-label="경력 타임라인"></div>
+        </div>
+      </aside>
     </div>
   </header>
 
@@ -54,7 +64,6 @@
   <!-- ── 푸터 ───────────────────────────────────────────── -->
   <footer class="footer">
     <div class="wrap footer-inner">
-      <img id="footer-photo" class="footer-photo" alt="남승현 프로필 사진" />
       <div class="footer-text">
         <p class="footer-name" id="footer-name"></p>
         <p class="footer-meta" id="footer-meta"></p>

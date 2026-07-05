@@ -12,7 +12,7 @@
   $("#hero-name-ko").textContent = PROFILE.name;
   $("#hero-name-en").textContent = PROFILE.nameEn;
   $("#hero-tagline").textContent = PROFILE.tagline;
-  $("#hero-about").textContent = PROFILE.about;
+  $("#hero-about").innerHTML = PROFILE.about.map((t) => `<p>${esc(t)}</p>`).join("");
 
   $("#journey").innerHTML = PROFILE.journey
     .map(

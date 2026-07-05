@@ -66,6 +66,7 @@ a:hover { text-decoration: underline; }
   max-width: 46em;
 }
 .about { margin-top: 30px; max-width: 44em; color: var(--muted); font-size: 15.5px; }
+.about p + p { margin-top: 13px; }
 .about strong { color: var(--text); font-weight: 600; }
 
 /* ── 시그니처: 커리어 여정 라인 ── */

@@ -33,7 +33,7 @@ const PROFILE = {
   email: "shknam3262@gmail.com",
   github: "https://github.com/SHKNam",
   linkedin: "https://www.linkedin.com/in/seunghyun-nam-a89987205/",
-  resume: null,                      // 이력서 PDF — 파일 수령 후 "assets/pdf/resume.pdf" 로 복원
+  resume: "assets/pdf/resume.pdf",
   photo: "assets/profile.jpg",       // 프로필 사진 — 파일 추가 필요 (없으면 자동 숨김)
   journey: [
     {
